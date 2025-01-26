@@ -52,12 +52,6 @@ function AppointmentList({
                       onUpdate={handleUpdate}
                     />
                   </DialogBody>
-                  <DialogFooter>
-                    <DialogActionTrigger asChild>
-                      <Button variant="outline">Cancel</Button>
-                    </DialogActionTrigger>
-                    <Button>Save</Button>
-                  </DialogFooter>
                   <DialogCloseTrigger />
                 </DialogContent>
               </DialogRoot>

@@ -37,7 +37,7 @@ function AppointmentForm({ onCreate, onUpdate, mode, appointment }) {
             />
           </Field>
           <Button type="submit" bg="blue.500">
-            Create Appointment
+            {mode === "create" ? 'Create Appointment' : 'Update appointment'}
           </Button>
         </Stack>
       </form>

@@ -31,10 +31,8 @@ function App() {
   };
 
   const handleApproval = (id) => {
-    const updatedAppt = updateAppointment(id, { status: 'Approved' });
-    if (updatedAppt) {
-      setAppointments(appointments);
-    }
+    updateAppointment(id, { status: 'Approved' });
+    setAppointments(getAppointments());
   };
 
   const handleUpdate = (data) => {
