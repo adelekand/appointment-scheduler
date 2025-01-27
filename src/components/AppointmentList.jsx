@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Stack, Text, HStack } from '@chakra-ui/react';
 import {
   DialogActionTrigger,
   DialogBody,
@@ -24,7 +24,7 @@ function AppointmentList({
   };
 
   return (
-    <Stack spacing={4}>
+    <HStack spacing={4}>
       {appointments.map((appt) => (
         <Box key={appt.id} p={4} shadow="md" borderWidth="1px" rounded="md">
           <Text>
@@ -69,7 +69,7 @@ function AppointmentList({
           )}
         </Box>
       ))}
-    </Stack>
+    </HStack>
   );
 }
 

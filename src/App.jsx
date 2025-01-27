@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Container } from '@chakra-ui/react';
-import Navbar from './components/Navbar';
-import RoleSelector from './components/RoleSelector';
-import AppointmentForm from './components/AppointmentForm';
-import AppointmentList from './components/AppointmentList';
+import HostView from './components/HostView';
+import GuestView from './components/GuestView';
 import {
   createAppointment,
   getAppointments,
@@ -52,24 +49,25 @@ function App() {
     localStorage.setItem('userRole', JSON.stringify(role));
   };
 
-  return (
-    <>
-      <Navbar />
-      <Container maxW="container.md" mt={4}>
-        <RoleSelector role={role} setRole={handleRoleUpdate} />
-        {role === 'Guest' && (
-          <AppointmentForm mode="create" onCreate={handleCreate} />
-        )}
-        <AppointmentList
-          appointments={appointments}
-          onHandleApproval={handleApproval}
-          onUpdate={handleUpdate}
-          onDelete={handleDelete}
-          role={role}
-        />
-      </Container>
-    </>
-  );
+  return role === "Guest" ? 
+  (
+    <GuestView
+      role={role}
+      appointments={appointments}
+      handleCreate={handleCreate}
+      handleRoleUpdate={handleRoleUpdate}
+    />
+  )
+  : (
+    <HostView
+      appointments={appointments}
+      handleApproval={handleApproval}
+      handleUpdate={handleUpdate}
+      handleDelete={handleDelete}
+      handleRoleUpdate={handleRoleUpdate}
+      role={role}
+    />
+    )
 }
 
 export default App;

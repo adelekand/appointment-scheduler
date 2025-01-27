@@ -16,7 +16,7 @@ function AppointmentForm({ onCreate, onUpdate, mode, appointment }) {
   };
 
   return (
-    <Box p={4} shadow="md" borderWidth="1px" rounded="md">
+    <Box w="100%" p={4} shadow="md" borderWidth="1px" rounded="md">
       <form onSubmit={handleSubmit}>
         <Stack spacing={4}>
           <Field label="Guest Name">

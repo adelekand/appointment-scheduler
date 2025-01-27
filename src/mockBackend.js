@@ -8,7 +8,7 @@ const fetchFromStorage = () => {
 };
 
 // Helper to save data to localStorage
-const saveToStorage = (data) => {
+export const saveToStorage = (data) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 };
 
